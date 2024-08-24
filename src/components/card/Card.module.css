@@ -1,0 +1,89 @@
+/* .cardDark {
+    max-width: 300px;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: hsl(210, 21.8%, 21.6%);
+    box-shadow: 2px 2px 2px rgba(45, 44, 44, 0.194);
+} */
+
+.cardWrapper {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    font-size: 14px;
+    padding-bottom: 15px;
+    gap: 20px;
+
+    /* border: 3px solid red; */
+}
+
+.cardWrapper .flagWrapper {
+    display: flex;
+
+    /* border: 3px solid greenyellow; */
+}
+
+.cardWrapper img {
+    width: 100%;
+    height: 300px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    cursor: pointer;
+}
+
+.cardWrapper .infoWrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    gap: 10px;
+    /* padding: 20px; */
+
+    /* border: 3px solid white; */
+}
+
+.cardWrapper .infoWrapper h4 {
+    font-size: 18px;
+    font-weight: 800;
+    /* padding-top: 5px;
+    padding-bottom: 25px; */
+}
+
+.cardWrapper .infoWrapper p {
+    font-weight: 600;
+    /* padding-bottom: 10px; */
+}
+
+.cardWrapper button {
+    all: unset
+}
+
+.cardWrapper .deleteIcon {
+    font-size: 35px;
+    color: rgb(206, 56, 56);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cardWrapper .deleteIcon:hover {
+    color: rgba(206, 56, 56, 0.8);
+}
+
+.cardWrapper .buttonsWrapper {
+
+}
+
+.cardWrapper .editIcon {
+    font-size: 35px;
+    color: rgb(10, 10, 43);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cardWrapper .editIcon:hover {
+    color: rgba(30, 30, 97, 0.8);
+}

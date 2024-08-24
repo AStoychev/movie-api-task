@@ -1,0 +1,193 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.modalOverlay .modalContent {
+    width: 80%;
+    position: relative;
+    background: rgb(50, 50, 50);
+    /* padding: 20px; */
+    border-radius: 10px;
+    max-width: 380px;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+.modalOverlay .buttonWrapper {
+    position: absolute;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    top: 3px;
+    right: 3px;
+    color: rgb(255, 255, 255);
+    z-index: 11;
+}
+
+.modalOverlay .modalClose {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(164, 2, 2, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 30px;
+    transition: 0.3s;
+}
+
+.modalOverlay .modalClose:hover {
+    background-color: rgba(164, 2, 2, 0.3);
+}
+
+.modalOverlay .modalContent .contentWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.modalContent .contentWrapper .detailsWrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    gap: 20px;
+    padding: 10px 5px;
+    color: rgb(255, 255, 255);
+    border-top: 2px solid rgba(193, 193, 93, 0.3);
+    /* border-top: 3px solid rgba(193, 193, 93, 0.3); */
+
+    /* border: 3px solid rgb(1, 207, 80) */
+}
+
+.modalContent .contentWrapper .detailsWrapper h4 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.modalContent .contentWrapper .detailsWrapper .detailsWrapperRow {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+
+    /* border: 1px solid red; */
+}
+
+.modalContent .contentWrapper .detailsWrapper .detailsWrapperRow .detailsWrapperColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.modalContent .contentWrapper .detailsWrapper span {
+    font-weight: 700;
+    color: rgba(234, 255, 0, 0.8);
+}
+
+.modalContent .contentWrapper .imageWrapper {
+    position: relative;
+    display: flex;
+    flex: 1;
+}
+
+.modalContent .contentWrapper .imageWrapper img {
+    width: 100%;
+    height: 400px;
+    border-radius: 5px;
+    mask-image: radial-gradient(circle, white 60%, transparent 100%);
+    -webkit-mask-image: radial-gradient(circle, white 30%, transparent 100%);
+}
+
+/* .modalContent .contentWrapper .imageWrapper .videoPlay {
+    position: absolute;
+    background-color: rgba(59, 58, 58, 0.5);
+    width: 35px;
+    height: 35px;
+    bottom: 5px;
+    right: 5px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.modalContent .contentWrapper .imageWrapper .videoPlay .crossed::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: red;
+    transform: rotate(45deg);
+    transform-origin: center;
+}
+
+.modalContent .contentWrapper .imageWrapper .videoPlay:hover {
+    background-color: rgba(66, 53, 53, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.modalContent .contentWrapper .imageWrapper .videoPlay .videoIcon {
+    font-size: 25px;
+}
+
+.modalContent .contentWrapper .imageWrapper .videoPlay a {
+    all: unset;
+} */
+
+.modalContent .contentWrapper .radioButtons {
+    background-color: rgba(0, 0, 0, 0.25);
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+
+    /* border: 1px solid red; */
+}
+
+.modalContent .contentWrapper .radioButtons .label {
+    font-weight: 700;
+    color: rgb(158, 153, 155);
+    cursor: pointer;
+}
+
+.modalContent .contentWrapper .radioButtons .labelSelected {
+    font-weight: 700;
+    color: rgb(194, 81, 77);
+    text-decoration: underline;
+    text-underline-offset: 8px;
+}
+
+.modalContent .contentWrapper .radioButtons .radioInput {
+    display: none;
+}
+
+.modalContent .contentWrapper .radioButtonsInformation {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}

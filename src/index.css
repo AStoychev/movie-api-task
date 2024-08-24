@@ -1,0 +1,58 @@
+@import url('./css-reset.css');
+
+@import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Alfa+Slab+One&family=Bebas+Neue&family=Comfortaa:wght@300&family=Indie+Flower&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Pacifico&family=Play:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Doodle+Shadow&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    background: linear-gradient(to bottom left,  rgba(14, 14, 14, 1) 40%, transparent 80%),
+    #2c3e50 100%;
+    /* background: linear-gradient(to bottom left, rgba(14, 14, 14, 1) 20%, transparent 80%),
+        rgba(50, 97, 76, 1) 100%; */
+    /* background: radial-gradient(circle, rgba(14,14,14,1) 0%, rgba(12, 33, 33, 1) 60%, rgba(50,97,76,1) 100%); */
+    /* background: linear-gradient(164deg, rgba(14,14,14,1) 0%, rgba(50,97,76,1) 100%); */
+    /* background: radial-gradient(circle, rgba(3, 11, 13, 1) 0%, rgba(12, 33, 33, 1) 35%, rgba(64, 123, 109, 1) 100%); */
+    /* background: radial-gradient(circle, rgba(15, 10, 88, 0.8) 0%, #00002A 100%); */
+    /* background: radial-gradient(circle, #2c3e50 0%, #000000 100%); */
+    /* background-color: rgba(29,58,145,0.8); */
+    /* background-color: rgb(22, 27, 34); */
+    color: #ffffff;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1159px;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+}
+
+html {
+    --scrollbarBG: #464c4e;
+    --thumbBG: #26769e;
+}
+
+body::-webkit-scrollbar {
+    width: 11px;
+}
+
+body {
+    scrollbar-width: thin;
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--scrollbarBG);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG);
+    border-radius: 6px;
+    border: 3px solid var(--scrollbarBG);
+}

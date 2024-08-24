@@ -1,0 +1,21 @@
+import { Link } from 'react-router-dom';
+
+import styles from './Header.module.css';
+
+
+function Header() {
+    return (
+        <header className={styles.headerDark}>
+            {/* <div className="container"> */}
+                <div className={styles.headerWrapper}>
+                    <Link className={styles.link} to="/">MovieTask</Link>
+                    <div className={styles.colorModeWrapper}>
+                        <button></button>
+                    </div>
+                </div>
+            {/* </div> */}
+        </header>
+    )
+}
+
+export default Header;

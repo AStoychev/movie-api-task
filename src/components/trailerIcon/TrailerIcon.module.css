@@ -1,0 +1,58 @@
+.videoPlay {
+    position: absolute;
+    background-color: rgba(59, 58, 58, 0.5);
+    width: 35px;
+    height: 35px;
+    bottom: 5px;
+    right: 5px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.noVideo {
+    position: absolute;
+    background-color: rgba(230, 214, 214, 0.148);
+    width: 35px;
+    height: 35px;
+    bottom: 5px;
+    right: 5px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    cursor: no-drop;
+    border: 2px solid rgba(135, 123, 123, 0.8);
+}
+
+.noVideo .crossed::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: red;
+    transform: rotate(45deg);
+    /* Adjust the angle of the line */
+    transform-origin: center;
+}
+
+.videoPlay:hover {
+    background-color: rgba(66, 53, 53, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.videoIcon {
+    font-size: 25px;
+}
+
+.videoPlay a {
+    all: unset;
+}

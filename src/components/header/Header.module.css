@@ -1,0 +1,54 @@
+.headerDark {
+    width: 100%;
+    background-color: #050505;
+    /* background-color: hsl(210, 21.8%, 21.6%); */
+    color: hsl(0, 0%, 100%);
+    border-bottom: 3px solid rgba(0, 0, 0, 0.272);
+}
+
+.headerWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0 20px 0;
+}
+
+.headerWrapper .link {
+    all: unset;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.headerWrapper .colorModeWrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.headerWrapper .colorModeWrapper button {
+    all: unset;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 375px) {}
+
+@media (max-width: 576px) {
+    .headerWrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 576px) {}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}

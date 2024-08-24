@@ -1,0 +1,27 @@
+.searchWrapper {
+    /* border: 3px solid red */
+}
+
+.suggestionsDropdown {
+    border: 1px solid #ccc;
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    background-color: white;
+    z-index: 1000;
+    width: 300px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .suggestionsDropdown li {
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .suggestionsDropdown li:hover {
+    background-color: #f0f0f0;
+  }
+  

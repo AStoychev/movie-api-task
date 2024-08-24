@@ -1,0 +1,75 @@
+.wrapper {
+    width: 100%;
+    background: linear-gradient(to bottom left,  rgb(63, 82, 154) 40%, transparent 80%),
+    #396897 100%;
+    /* background-color: rgba(165, 187, 162, 0.8); */
+    /* background-color: rgba(165, 187, 162, 0.8); */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 100px;
+    border-radius: 5px;
+    margin: 0 auto;
+    gap: 10px;
+}
+
+.filmStrip {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.imageBackground {
+    width: 100px;
+}
+
+.btnUpload {
+    width: 80px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    transition: 0.3s;
+    border: 2px solid #ffffff;
+}
+
+.btnUpload:hover{
+    color: rgb(182, 166, 166);
+    border: 2px solid rgb(182, 166, 166);
+}
+
+.icon {
+    font-size: 50px;
+    color: inherit;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+input[type="checkbox"] {
+    /* display: none; */
+    width: 20px;
+    height: 20px;
+    /* border: 1px solid red; */
+}
+
+.customFileUpload {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+.moviesWrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+    /* border: 3px solid rgb(255, 255, 255) */
+}
