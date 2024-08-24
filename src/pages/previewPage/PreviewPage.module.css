@@ -30,6 +30,11 @@
     color: white;
     padding: 20px;
     box-sizing: border-box;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.movies:hover {
+    background-color: #666;
 }
 
 @media only screen and (max-width: 375px) {}

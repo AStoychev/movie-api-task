@@ -1,18 +1,22 @@
 import { useState, useEffect, useMemo } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { moviesReordered } from '../../store/slices/moviesSlice';
 
 import Card from '../../components/card/Card';
 import CustomButton from '../../components/CustomButton/CustomButton';
 import Search from '../../components/search/Search';
 import FilterByGenre from '../../components/filterByGenre/FilterByGenre';
+import MovieSearch from '../../components/selectLanguage/MovieSearch';
 
 import styles from './PreviewPage.module.css';
 
 function PreviewPage() {
     const [filterType, setFilterType] = useState();
-    const [movie, setMovie] = useState(null);
+    const [movies, setMovie] = useState(null);
     const [currentGenres, setCurrentGenre] = useState([]);
     const allMovies = useSelector(state => state.movies.movies);
+
+    const dispatch = useDispatch();
 
     const status = useSelector(state => state.movies.status);
     const error = useSelector(state => state.movies.error);
@@ -25,12 +29,29 @@ function PreviewPage() {
         }
     };
 
+    const onDragStart = (e, index) => {
+        e.dataTransfer.setData('text/plain', index);
+    };
+
+    const onDragOver = (e) => {
+        e.preventDefault();
+    };
+
+    const onDrop = (e, targetIndex) => {
+        const sourceIndex = e.dataTransfer.getData('text/plain');
+        const updatedList = Array.from(movies);
+        const [movedItem] = updatedList.splice(sourceIndex, 1);
+        updatedList.splice(targetIndex, 0, movedItem);
+        setMovie(updatedList);
+        dispatch(moviesReordered(updatedList));
+    };
+
     const onHandleSave = () => {
         console.log('Save')
     }
 
     const combineGenre = [];
-    allMovies.map(movie => combineGenre.push(...movie.genres));
+    allMovies && allMovies.map(movie => combineGenre.push(...movie.genres));
     const uniqueGenres = [...new Set(combineGenre)];
 
     const filteredMovies = useMemo(() => {
@@ -58,11 +79,21 @@ function PreviewPage() {
             <div className="container">
                 <div className={styles.movieSelector}>
                     <Search />
+                    <MovieSearch/>
                     <FilterByGenre handleGenreChange={handleGenreChange} onFilterHandle={onFilterHandle} uniqueGenres={uniqueGenres} />
                 </div>
-                <div className={styles.moviewWrapper}>
-                    {movie && movie.map(movie => (
-                        <div key={movie.tmdbID} className={styles.movies}>
+                <div
+                    className={styles.moviewWrapper}
+                >
+                    {movies && movies.map((movie, index) => (
+                        <div
+                            key={movie.tmdbID}
+                            className={styles.movies}
+                            draggable
+                            onDragStart={(e) => onDragStart(e, index)}
+                            onDragOver={onDragOver}
+                            onDrop={(e) => onDrop(e, index)}
+                        >
                             <Card movie={movie} />
                         </div>
                     ))}
@@ -70,7 +101,7 @@ function PreviewPage() {
                 <CustomButton title={'SAVE'} onHandleClick={onHandleSave} />
             </div>
         </div>
-    )
+    );
 }
 
 export default PreviewPage;

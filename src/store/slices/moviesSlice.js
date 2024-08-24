@@ -38,10 +38,13 @@ const moviesSlice = createSlice({
         movieDeleted: (state, action) => {
             const id = action.payload;
             state.movies = state.movies.filter(movie => movie.tmdbID !== id);
-        }
+        },
+        moviesReordered: (state, action) => {
+            state.movies = action.payload;
+        },
     }
 });
 
-export const { moviesFetched, moviesLoading, moviesFailed, movieAdded, movieEdited, movieDeleted } = moviesSlice.actions;
+export const { moviesFetched, moviesLoading, moviesFailed, movieAdded, movieEdited, movieDeleted, moviesReordered } = moviesSlice.actions;
 
 export default moviesSlice.reducer;
