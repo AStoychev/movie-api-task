@@ -33,7 +33,16 @@ function EditModal({ openCloseModal, movie }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(movieEdited(movieData));
+        console.log('DATA: ', movie)
+        const updatedMovie = {
+            ...movie,
+            ...movieData,
+            genres: typeof movieData.genres === 'string'
+            ? movieData.genres.split(',').map(genre => genre.trim()) 
+            : movieData.genres, // If it's not a string, use it as is
+            // genres: movieData.genres.split(',').map(genre => genre.trim()) // Convert string back to array
+        };
+        dispatch(movieEdited(updatedMovie));
         openCloseModal();
     };
 
@@ -41,19 +50,19 @@ function EditModal({ openCloseModal, movie }) {
         <div className={styles.modalOverlay} onClick={openCloseModal}>
             <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
                 <h3>EDIT MOVIE</h3>
-                <CloseButton openCloseModal={openCloseModal}/>
+                <CloseButton openCloseModal={openCloseModal} />
                 <div className={styles.contentWrapper}>
                     <form onSubmit={handleSubmit}>
-                        <Input label='Title' type='text' name='title' movie={movieData.title} onChange={handleChange}/>
-                        <Input label='Overview' textarea={true} name='overview' movie={movieData.overview} onChange={handleChange}/>
-                        <Input label='Actors' type='text' name='actors' movie={movieData.actors} onChange={handleChange}/>
-                        <Input label='Genres' type='text' name='genres' movie={movieData.genres} onChange={handleChange}/>
-                        <Input label='Poster URL' type='text' name='poster' movie={movieData.poster} onChange={handleChange}/>
-                        <Input label='Release Date' type='date' name='release' movie={movieData.release} onChange={handleChange}/>
-                        <Input label='Rating' type='number' name='rating' movie={movieData.rating} onChange={handleChange} min='0' max='10' step='0.001'/>
-                        <Input label='Trailer URL' type='text' name='trailer' movie={movieData.trailer} onChange={handleChange}/>
-                        <Input label='Director' type='text' name='director' movie={movieData.director} onChange={handleChange}/>
-                        <Input label='Duration' type='number' name='duration' movie={movieData.duration} onChange={handleChange}/>
+                        <Input label='Title' type='text' name='title' movie={movieData.title} onChange={handleChange} />
+                        <Input label='Overview' textarea={true} name='overview' movie={movieData.overview} onChange={handleChange} />
+                        <Input label='Actors' type='text' name='actors' movie={movieData.actors} onChange={handleChange} />
+                        <Input label='Genres' type='text' name='genres' movie={movieData.genres} onChange={handleChange} />
+                        <Input label='Poster URL' type='text' name='poster' movie={movieData.poster} onChange={handleChange} />
+                        <Input label='Release Date' type='date' name='release' movie={movieData.release} onChange={handleChange} />
+                        <Input label='Rating' type='number' name='rating' movie={movieData.rating} onChange={handleChange} min='0' max='10' step='0.001' />
+                        <Input label='Trailer URL' type='text' name='trailer' movie={movieData.trailer} onChange={handleChange} />
+                        <Input label='Director' type='text' name='director' movie={movieData.director} onChange={handleChange} />
+                        <Input label='Duration' type='number' name='duration' movie={movieData.duration} onChange={handleChange} />
                         <div className={styles.buttonWrapper}>
                             <button onClick={openCloseModal} className={styles.cancel}>Cancel</button>
                             <button type="submit" className={styles.delete}>Save</button>

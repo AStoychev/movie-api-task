@@ -4,7 +4,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,3 +86,22 @@
     border-radius: 5px;
     border: 1px solid rgba(53, 166, 155, 0);
 }
+
+@media only screen and (max-width: 375px) {}
+
+@media only screen and (max-width: 600px) {}
+
+@media only screen and (max-width: 600px) {    
+    .modalOverlay .modalContent {
+        width: 94%;
+        height:28%;
+    }
+}
+
+@media only screen and (min-width: 576px) {}
+
+@media only screen and (min-width: 768px) {}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1200px) {}

@@ -1,5 +1,7 @@
 import axios from "axios";
 
+import { createMovieData } from "../functions/createMovieData";
+
 const API_KEY = import.meta.env.VITE_API_KEY
 
 async function fetchMovieData(movies) {

@@ -8,11 +8,12 @@
     height: 100%;
     box-sizing: border-box;
     padding: 8px;
-    background-color: rgb(23,23,23);
+    background-color: rgb(23, 23, 23);
     color: rgba(220, 216, 216, 0.776);
     box-shadow: none;
     border-radius: 4px;
-    border: 2px solid  hsl(210, 20%, 40%);;
+    border: 2px solid hsl(210, 20%, 40%);
+    ;
     /* border: 2px solid rgb(161, 148, 173); */
     outline: none;
     /* border: 3px solid red; */
@@ -26,7 +27,7 @@
     width: 100%;
     box-sizing: border-box;
     padding: 8px;
-    background-color: rgb(23,23,23);
+    background-color: rgb(23, 23, 23);
     color: rgba(220, 216, 216, 0.776);
     border: 2px solid;
     border-color: #0e79ec;
@@ -64,3 +65,19 @@
     background-color: hsla(210, 35%, 54%, 0.8);
     /* background-color: #f0f0f0; */
 }
+
+@media only screen and (max-width: 375px) {}
+
+@media only screen and (min-width: 576px) {}
+
+@media only screen and (max-width: 600px) {
+    .searchWrapper {
+        width: 94%;
+    }
+}
+
+@media only screen and (min-width: 768px) {}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1200px) {}

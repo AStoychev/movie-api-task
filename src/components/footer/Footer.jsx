@@ -22,13 +22,6 @@ function Footer() {
 
     return (
                 <div className={styles.footerWrapper} onMouseLeave={hideTooltipEmail}>
-                    <div className={styles.logoColumn}>
-                        <div>
-                            <p>Created by</p>
-                            <p>A.Stoychev</p>
-                        </div>
-                    </div>
-
                     <div className={styles.column}>
                         <h4>GET IN TOUCH:</h4>
                         <div className={styles.getInTouch}>

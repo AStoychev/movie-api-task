@@ -54,8 +54,12 @@
 }
 
 .titleWrapper {
+    display: flex;
+    flex-direction: row;
     font-size: 20px;
     cursor: pointer;
+
+    /* border: 3px solid red; */
 }
 
 .titleWrapper p {
@@ -65,3 +69,17 @@
 .titleScratch {
     text-decoration: line-through;
 }
+
+
+@media screen and (max-width: 600px) {
+    .titleWrapper {
+        display: flex;
+        flex-direction: row;
+        text-align: start;
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (max-width: 992px) {}

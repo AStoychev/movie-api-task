@@ -9,25 +9,6 @@
     font-family: Play, Arial, Helvetica, sans-serif;
 }
 
-.footerWrapper .logoColumn {
-    display: flex;
-    flex-direction: row;
-}
-
-.footerWrapper .logoColumn div {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-}
-
-.footerWrapper .logoColumn p {
-    font-size: 19px;
-    color: #ffffff;
-    /* color: #C5C5FF; */
-    padding-bottom: 10px;
-}
-
 .footerWrapper .column {
     text-align: center;
 

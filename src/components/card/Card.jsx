@@ -48,12 +48,11 @@ function Card({ movie }) {
             {isDeleteModalOpen && <DeleteModal openCloseModal={openCloseDeleteModal} handleDelete={handleDelete} movie={movie} />}
             <div className={styles.flagWrapper} onClick={openCloseDetailsModal}>
                 <div className={styles.rating}>{roundNumber(movie.rating)}</div>
-                <img src={movie.poster ? movie.poster : noImage} alt={movie.title} />
+                <img src={movie.poster ? movie.poster : noImage} alt={`Movie Image ${movie.title}`} />
             </div>
             <div className={styles.infoWrapper}>
                 <h4>{movie.title}</h4>
-                <p>{movie.genres}</p>
-                {/* <p>{movie.genres.join(' | ')}</p> */}
+                <p>{movie.genres.join(' | ')}</p>
                 <div className={styles.buttonsWrapper}>
                     <button onClick={openCloseEditModal}>
                         <CiEdit className={styles.editIcon} />

@@ -11,7 +11,7 @@
 
 }
 
-.dropdown .selectDark {
+.dropdown .selectButton {
     all: unset;
     width: 100%;
     padding: 18px 30px 18px 30px;
@@ -29,7 +29,7 @@
     transition: 0.3s;
 }
 
-.dropdown .selectDark:hover {
+.dropdown .selectButton:hover {
     background-color: hsl(210, 30%, 26%);
 }
 
@@ -68,3 +68,20 @@
     cursor: pointer;
     margin: 0 auto;
 }
+
+@media only screen and (max-width: 375px) {}
+
+@media only screen and (min-width: 576px) {}
+
+@media only screen and (max-width: 600px) {
+
+    .dropdown {
+        width: 94%;
+    }
+}
+
+@media only screen and (min-width: 768px) {}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1200px) {}

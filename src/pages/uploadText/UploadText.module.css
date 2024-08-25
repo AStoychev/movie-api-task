@@ -6,7 +6,7 @@
     align-items: center;
     margin-top: 10px;
     /* margin-top: 35px; */
-    
+
     gap: 15px;
 
     /* border: 3px solid red; */
@@ -18,7 +18,7 @@
     /* max-height: 300px; */
     /* width: 50%;
     height: 50%; */
-    background-color: rgb(23,33,41);
+    background-color: rgb(23, 33, 41);
     /* background-color: rgba(165, 187, 162, 0.8); */
     /* background-color: rgba(165, 187, 162, 0.8); */
     /* box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); */
@@ -75,7 +75,7 @@
     /* border: 3px solid red; */
 }
 
-.btnUpload:hover{
+.btnUpload:hover {
     color: rgb(182, 166, 166);
     /* border: 2px solid rgb(182, 166, 166); */
 }
@@ -123,7 +123,7 @@ input[type="checkbox"] {
 }
 
 .moviesWrapper {
-    background-color: rgb(23,33,41);
+    background-color: rgb(23, 33, 41);
     width: 50%;
     height: auto;
     display: flex;
@@ -139,3 +139,25 @@ input[type="checkbox"] {
 
     /* border: 3px solid red */
 }
+
+@media only screen and (max-width: 375px) {}
+
+@media only screen and (min-width: 576px) {}
+
+@media only screen and (max-width: 600px) {
+    
+    .uploadWrapper {
+        width: 94%;
+    }
+
+    .moviesWrapper {
+        width: 94%;
+        height: auto;
+    }
+}
+
+@media only screen and (min-width: 768px) {}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1200px) {}

@@ -16,7 +16,7 @@ export default function FilterByGenre({ handleGenreChange, onFilterHandle, uniqu
     return (
         <div className={styles.dropdown}>
             <div className={styles.dropdownWrapper}>
-                <button onClick={() => setIsOpen(!isOpen)} className={styles.selectDark}>
+                <button onClick={() => setIsOpen(!isOpen)} className={styles.selectButton}>
                     {FILTER_STRING}
                     <RiArrowDropDownLine />
                 </button>

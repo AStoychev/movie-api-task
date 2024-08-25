@@ -4,7 +4,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,7 +14,7 @@
 .modalOverlay .modalContent {
     width: 80%;
     position: relative;
-    background: rgb(50, 50, 50);
+    background-color: rgb(50, 50, 50);
     /* padding: 20px; */
     border-radius: 10px;
     max-width: 380px;
@@ -82,7 +82,7 @@
 }
 
 .modalContent .contentWrapper .radioButtons {
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color-color: rgba(0, 0, 0, 0.25);
     display: flex;
     text-align: center;
     align-items: center;
@@ -116,4 +116,35 @@
     text-align: center;
     align-items: center;
     justify-content: center;
+    
 }
+
+@media only screen and (max-width: 375px) {}
+
+@media only screen and (max-width: 600px) {}
+
+@media only screen and (max-width: 600px) {
+    .modalOverlay .modalContent {
+        width: 94%;
+        height: 94%;
+    }
+
+    .modalContent .contentWrapper .imageWrapper {
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+
+    .modalContent .contentWrapper .imageWrapper img {
+        width: 80%;
+        height: 300px;
+    }
+}
+
+@media only screen and (min-width: 576px) {}
+
+@media only screen and (min-width: 768px) {}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1200px) {}

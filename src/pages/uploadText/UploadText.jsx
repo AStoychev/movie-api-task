@@ -25,7 +25,9 @@ function UploadText() {
         reader.onload = (e) => {
             const text = e.target.result;
             const movieTitles = text.split('\r\n').filter(title => title.trim());
-            setMovies(movieTitles.map((title) => ({ title, selected: true })));
+            const uniqueTitles = [...new Set(movieTitles)];
+            setMovies(uniqueTitles.map((title) => ({ title, selected: true })));
+            // setMovies(movieTitles.map((title) => ({ title, selected: true })));
         };
         reader.readAsText(file);
     };
@@ -75,6 +77,9 @@ function UploadText() {
 
     const onHandleClick = () => {
         fetchMovieData(checkedTitles).then(result => {
+            // setTimeout(() => {
+            //     dispatch(moviesFetched(result));
+            // }, 2000)
             dispatch(moviesFetched(result));
         });
         navigate('/preview');
@@ -110,7 +115,7 @@ function UploadText() {
 
                         <div className={styles.textWrapper}>
                             <h3>Drag & Drop</h3>
-                            <p>or click over cloud and select file .txt file from device</p>
+                            <p>or click over cloud and select .txt file from device</p>
                         </div>
                     </div>
                 </div>

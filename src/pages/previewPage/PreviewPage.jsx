@@ -2,11 +2,15 @@ import { useState, useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { moviesReordered } from '../../store/slices/moviesSlice';
 
+import { useSendMovieData } from '../../hooks/useSendMovieData';
+
 import Card from '../../components/card/Card';
 import CustomButton from '../../components/buttons/customButton/CustomButton';
 import Search from '../../components/search/Search';
 import FilterByGenre from '../../components/filterByGenre/FilterByGenre';
 import MovieSearch from '../../components/selectLanguage/MovieSearch';
+import NoMovies from '../../components/noMovies/NoMovies';
+import Spinner from '../../components/spinner/Spinner';
 
 import styles from './PreviewPage.module.css';
 
@@ -17,6 +21,8 @@ function PreviewPage() {
     const allMovies = useSelector(state => state.movies.movies);
 
     const dispatch = useDispatch();
+
+    const { sendData } = useSendMovieData();
 
     const status = useSelector(state => state.movies.status);
     const error = useSelector(state => state.movies.error);
@@ -47,17 +53,18 @@ function PreviewPage() {
     };
 
     const onHandleSave = () => {
-        console.log('Save')
+        sendData()
     }
 
-    const combineGenre = [];
-    allMovies && allMovies.map(movie => combineGenre.push(...movie.genres));
-    const uniqueGenres = [...new Set(combineGenre)];
+    const getUniqueGenres = () => {
+        const combineGenre = [];
+        allMovies && allMovies.map(movie => combineGenre.push(...movie.genres));
+        const uniqueGenres = [...new Set(combineGenre)];
+        return uniqueGenres
+    }
 
     const filteredMovies = useMemo(() => {
         if (currentGenres.length === 0) return allMovies;
-        // const allGenres = allMovies[0].genres
-        // const splitGenres = allGenres.split(' | ');
         return allMovies.filter((movie) =>
             movie.genres.some((genre) => currentGenres.includes(genre))
         );
@@ -76,14 +83,20 @@ function PreviewPage() {
         }
     }, [allMovies, filterType]);
 
+    const noMovies = !movies?.length
+
     return (
         <div className="container" style={{ alignItems: 'start' }}>
+            <div style={{ display: status === 'idle' ? 'block' : 'none' }}>
+                <Spinner />
+            </div>
+
             <div className={styles.wrapper}>
                 <div className={styles.movieSelector}>
                     <Search />
-                    {/* <MovieSearch/> */}
-                    <FilterByGenre handleGenreChange={handleGenreChange} onFilterHandle={onFilterHandle} uniqueGenres={uniqueGenres} />
+                    <FilterByGenre handleGenreChange={handleGenreChange} onFilterHandle={onFilterHandle} uniqueGenres={getUniqueGenres()} />
                 </div>
+                {noMovies && <NoMovies />}
                 <div className={styles.moviewWrapper}>
                     {movies && movies.map((movie, index) => (
                         <div
@@ -98,9 +111,11 @@ function PreviewPage() {
                         </div>
                     ))}
                 </div>
-                <div className={styles.buttonWrapper}>
-                    <CustomButton title={'SAVE'} onHandleClick={onHandleSave} />
-                </div>
+                {!noMovies &&
+                    <div className={styles.buttonWrapper}>
+                        <CustomButton title={'SAVE'} onHandleClick={onHandleSave} />
+                    </div>
+                }
             </div>
         </div>
     );

@@ -4,6 +4,8 @@ import TrailerIcon from "../../trailerIcon/TrailerIcon";
 
 import styles from './DetailsModal.module.css';
 
+import noImage from '../../../assets/photo.png'
+
 const DetailsModal = ({ openCloseModal, movie }) => {
     const [selected, setSelected] = useState('option1');
 
@@ -14,19 +16,15 @@ const DetailsModal = ({ openCloseModal, movie }) => {
     return (
         <div className={styles.modalOverlay} onClick={openCloseModal}>
             <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
-                <CloseButton openCloseModal={openCloseModal}/>
-                {/* <div className={styles.buttonWrapper}>
-                    <button className={styles.modalClose} onClick={openCloseModal}>x</button>
-                </div> */}
+                <CloseButton openCloseModal={openCloseModal} />
                 <div className={styles.contentWrapper}>
                     <div className={styles.imageWrapper}>
-                        <img src={movie.poster} alt={movie.title} />
-                        <TrailerIcon trailer={movie.trailer}/>
+                        <img src={movie.poster ? movie.poster : noImage} alt={`Movie Image ${movie.title}`} />
+                        <TrailerIcon trailer={movie.trailer} />
                     </div>
                     <div className={styles.detailsWrapper}>
                         <h4>{movie.title}</h4>
-                        <p>{movie.genres}</p>
-                        {/* <p>{movie.genres.join(' | ')}</p> */}
+                        <p>{movie.genres.join(' | ')}</p>
                         <div className={styles.detailsWrapperRow}>
                             <div className={styles.detailsWrapperColumn}>
                                 <span>RATING</span>
@@ -78,21 +76,9 @@ const DetailsModal = ({ openCloseModal, movie }) => {
                         <div className={styles.radioButtonsInformation}>
                             {selected === 'option1' && <p>{movie.overview}</p>}
                             {selected === 'option2' && <p>{movie.actors}</p>}
-                            {/* {selected === 'option2' && <p>{movie.actors.join(', ')}</p>} */}
                             {selected === 'option3' && <p>{movie.director}</p>}
                         </div>
-                        {/* <p>{movie.overview}</p> */}
-                        {/* <p>{movie.actors}</p> */}
-                        {/* <p>{movie.genres}</p> */}
-                        {/* <p>{movie.release}</p> */}
-                        {/* <p>{movie.rating}</p> */}
-                        {/* <p>{movie.trailer}</p> */}
-                        {/* <p>{movie.directior}</p> */}
-                        {/* <p>{movie.duration}</p> */}
                     </div>
-                    {/* <div className={styles.imageWrapper}>
-                        <img src={movie.poster} alt={movie.title}/>
-                    </div> */}
                 </div>
             </div>
         </div>

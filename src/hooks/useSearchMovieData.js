@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { movieAdded } from "../store/slices/moviesSlice";
 import axios from "axios";
 
@@ -10,9 +10,10 @@ const API_KEY = import.meta.env.VITE_API_KEY;
 export const useSearchMovieData = () => {
     const [suggestions, setSuggestions] = useState([]);
     const dispatch = useDispatch();
+    const existingMovies = useSelector(state => state.movies.movies)
 
     const fetchSuggestions = async (query) => {
-        if (query.length < 2) return; // Only search when the user types 2 or more characters
+        if (query.length < 2) return;
         try {
             const response = await axios.get(`https://api.themoviedb.org/3/search/movie`, {
                 params: { api_key: API_KEY, query: query }
@@ -29,8 +30,13 @@ export const useSearchMovieData = () => {
                 params: { api_key: API_KEY, append_to_response: 'credits,videos' }
             });
             const movieDetails = createMovieData(response.data);
-            dispatch(movieAdded(movieDetails)); // Dispatch action to add the movie to Redux store
-            setSuggestions([]); // Clear suggestions
+            const isMovieExist = existingMovies.some(movie => movie.tmdbID === movieDetails.tmdbID);
+
+            if (!isMovieExist) {
+                dispatch(movieAdded(movieDetails));
+            }
+
+            setSuggestions([]);
         } catch (error) {
             console.error('Error fetching movie data:', error);
         }
