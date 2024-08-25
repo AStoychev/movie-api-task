@@ -1,0 +1,45 @@
+.wrapper {
+    padding: 10px;
+}
+
+.inputField {
+    /* all: unset; */
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    /* margin-bottom: 10px; */
+    background-color: rgb(23,23,23);
+    color: rgba(220, 216, 216, 0.776);
+    box-shadow: none;
+    border: 1px solid black;
+    outline: none;
+}
+
+.inputField:focus {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    background-color: rgb(23,23,23);
+    color: rgba(220, 216, 216, 0.776);
+    border: 1px solid;
+    border-color: #0e79ec;
+    outline: none;
+}
+
+.textarea {
+    width: 98%;
+    max-height: 300px;
+    background-color: rgb(23,23,23);
+    color: rgba(220, 216, 216, 0.776);
+    resize: vertical;
+}
+
+.textarea:focus {
+    width: 98%;
+    background-color: rgb(23,23,23);
+    color: rgba(220, 216, 216, 0.776);
+    resize: vertical;
+    border: 1px solid;
+    border-color: #0e79ec;
+    outline: none;
+}

@@ -4,8 +4,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 body {
-    background: linear-gradient(to bottom left,  rgba(14, 14, 14, 1) 40%, transparent 80%),
-    #2c3e50 100%;
+    background-color: rgb(25,25,25);
+    /* background: linear-gradient(to bottom left,  rgba(14, 14, 14, 1) 40%, transparent 80%),
+    #2c3e50 100%; */
     /* background: linear-gradient(to bottom left, rgba(14, 14, 14, 1) 20%, transparent 80%),
         rgba(50, 97, 76, 1) 100%; */
     /* background: radial-gradient(circle, rgba(14,14,14,1) 0%, rgba(12, 33, 33, 1) 60%, rgba(50,97,76,1) 100%); */
@@ -19,17 +20,22 @@ body {
     padding: 0;
     margin: 0;
     overflow-x: hidden;
+    height: 100%
 }
 
 .container {
     max-width: 1200px;
-    height: 100vh;
+    height: auto;
+    min-height: 85vh;
+    /* height: 100vh; */
     margin: 0 auto;
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
+    font-family: Play, Arial, Helvetica, sans-serif;
+    /* font-family: "Roboto", sans-serif; */
     box-sizing: border-box;
 }
 

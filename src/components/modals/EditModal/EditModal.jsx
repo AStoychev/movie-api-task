@@ -2,6 +2,9 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { movieEdited } from "../../../store/slices/moviesSlice";
 
+import Input from "./input/Input";
+import CloseButton from "../../buttons/closeButton/CloseButton";
+
 import styles from './EditModal.module.css';
 
 function EditModal({ openCloseModal, movie }) {
@@ -38,125 +41,24 @@ function EditModal({ openCloseModal, movie }) {
         <div className={styles.modalOverlay} onClick={openCloseModal}>
             <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
                 <h3>EDIT MOVIE</h3>
-                <div className={styles.buttonWrapper}>
-                    <button className={styles.modalClose} onClick={openCloseModal}>x</button>
-                </div>
+                <CloseButton openCloseModal={openCloseModal}/>
                 <div className={styles.contentWrapper}>
-
                     <form onSubmit={handleSubmit}>
-                        {/* <div>
-                            <label>TMDB ID:</label>
-                            <input
-                                type="text"
-                                name="tmdbId"
-                                value={movieData.tmdbID}
-                                onChange={handleChange}
-                            />
-                        </div> */}
-
-                        <div>
-                            <label>Title:</label>
-                            <input
-                                type="text"
-                                name="title"
-                                value={movieData.title}
-                                onChange={handleChange}
-                            />
+                        <Input label='Title' type='text' name='title' movie={movieData.title} onChange={handleChange}/>
+                        <Input label='Overview' textarea={true} name='overview' movie={movieData.overview} onChange={handleChange}/>
+                        <Input label='Actors' type='text' name='actors' movie={movieData.actors} onChange={handleChange}/>
+                        <Input label='Genres' type='text' name='genres' movie={movieData.genres} onChange={handleChange}/>
+                        <Input label='Poster URL' type='text' name='poster' movie={movieData.poster} onChange={handleChange}/>
+                        <Input label='Release Date' type='date' name='release' movie={movieData.release} onChange={handleChange}/>
+                        <Input label='Rating' type='number' name='rating' movie={movieData.rating} onChange={handleChange} min='0' max='10' step='0.001'/>
+                        <Input label='Trailer URL' type='text' name='trailer' movie={movieData.trailer} onChange={handleChange}/>
+                        <Input label='Director' type='text' name='director' movie={movieData.director} onChange={handleChange}/>
+                        <Input label='Duration' type='number' name='duration' movie={movieData.duration} onChange={handleChange}/>
+                        <div className={styles.buttonWrapper}>
+                            <button onClick={openCloseModal} className={styles.cancel}>Cancel</button>
+                            <button type="submit" className={styles.delete}>Save</button>
                         </div>
-
-                        <div>
-                            <label>Overview:</label>
-                            <textarea
-                                name="overview"
-                                value={movieData.overview}
-                                onChange={handleChange}
-                            />
-                        </div>
-
-                        <div>
-                            <label>Actors (comma-separated):</label>
-                            <input
-                                type="text"
-                                name="actors"
-                                value={movieData.actors}
-                                onChange={handleChange}
-                            />
-                        </div>
-
-                        <div>
-                            <label>Genres (comma-separated):</label>
-                            <input
-                                type="text"
-                                name="genres"
-                                value={movieData.genres}
-                                onChange={handleChange}
-                            />
-                        </div>
-
-                        <div>
-                            <label>Poster URL:</label>
-                            <input
-                                type="text"
-                                name="poster"
-                                value={movieData.poster}
-                                onChange={handleChange}
-                            />
-                        </div>
-
-                        <div>
-                            <label>Release Date:</label>
-                            <input
-                                type="date"
-                                name="releaseDate"
-                                value={movieData.release}
-                                onChange={handleChange}
-                            />
-                        </div>
-
-                        <div>
-                            <label>Rating:</label>
-                            <input
-                                type="number"
-                                name="rating"
-                                value={movieData.rating}
-                                onChange={handleChange}
-                                min="0"
-                                max="10"
-                                step="0.1"
-                            />
-                        </div>
-
-                        <div>
-                            <label>Trailer URL:</label>
-                            <input
-                                type="text"
-                                name="trailer"
-                                value={movieData.trailer}
-                                onChange={handleChange}
-                            />
-                        </div>
-
-                        <div>
-                            <label>Director:</label>
-                            <input
-                                type="text"
-                                name="director"
-                                value={movieData.director}
-                                onChange={handleChange}
-                            />
-                        </div>
-
-                        <div>
-                            <label>Duration (minutes):</label>
-                            <input
-                                type="number"
-                                name="duration"
-                                value={movieData.duration}
-                                onChange={handleChange}
-                            />
-                        </div>
-
-                        <button type="submit">Save</button>
+                        {/* <button type="submit">Save</button> */}
                     </form>
                 </div>
             </div>

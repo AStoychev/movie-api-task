@@ -1,0 +1,13 @@
+.cancel {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid rgb(53, 166, 155);
+    transition: 0.3s;
+}
+
+.cancel:hover {
+    background-color: rgb(53, 166, 155);
+    border-radius: 5px;
+    border: 1px solid rgba(53, 166, 155, 0);
+}

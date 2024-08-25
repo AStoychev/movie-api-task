@@ -9,7 +9,7 @@ export default function FilterByGenre({ handleGenreChange, onFilterHandle, uniqu
     const [isOpen, setIsOpen] = useState(false);
 
     const handleSelectChange = (e) => {
-        const {value, checked} = e.target;
+        const { value, checked } = e.target;
         handleGenreChange(value, checked);
     };
 
@@ -22,19 +22,23 @@ export default function FilterByGenre({ handleGenreChange, onFilterHandle, uniqu
                 </button>
             </div>
             {isOpen && (
-                <div className={styles.optionsWrapperDark}>
-                    {uniqueGenres.map((genre) => (
-                        <div key={genre}>
-                            <input
-                                type="checkbox"
-                                id={genre}
-                                value={genre}
-                                onChange={handleSelectChange}
-                            />
-                            <label htmlFor={genre}>{genre}</label>
-                        </div>
-                    ))}
-                    <button onClick={onFilterHandle}>FILTER</button>
+                <div className={styles.optionsWrapper}>
+                    <div className={styles.checkboxesWrapper}>
+                        {uniqueGenres.map((genre) => (
+                            <div key={genre}>
+                                <input
+                                    type="checkbox"
+                                    id={genre}
+                                    value={genre}
+                                    onChange={handleSelectChange}
+                                />
+                                <label htmlFor={genre}>{genre}</label>
+                            </div>
+                        ))}
+                    </div>
+                    <div className={styles.buttonWrapper}>
+                        <button onClick={onFilterHandle} className={styles.buttonOptions}>FILTER</button>
+                    </div>
                 </div>
             )}
         </div>

@@ -4,14 +4,20 @@ import { movieDeleted } from "../../store/slices/moviesSlice";
 
 import DetailsModal from "../modals/DetailsModal/DetailsModal";
 import EditModal from "../modals/EditModal/EditModal";
+import DeleteModal from "../modals/DeleteModal/DeleteModal";
+
+import { formatGenres } from "../../functions/formatGenres";
 
 import { CiEdit } from "react-icons/ci";
 import { TiDelete } from "react-icons/ti";
 import styles from './Card.module.css';
 
+import noImage from '../../assets/photo.png'
+
 function Card({ movie }) {
     const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false);
     const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+    const [isDeleteModalOpen, setIdDeleteModalOpen] = useState(false);
     const dispatch = useDispatch();
 
     const openCloseDetailsModal = () => {
@@ -22,42 +28,42 @@ function Card({ movie }) {
         setIsEditModalOpen(!isEditModalOpen);
     }
 
+    const openCloseDeleteModal = () => {
+        setIdDeleteModalOpen(!isDeleteModalOpen)
+    }
+
     const handleDelete = (id) => {
         dispatch(movieDeleted(id));
     };
 
+    const roundNumber = (number) => {
+        const result = Math.round(number * 100) / 100
+        return result
+    }
+
     return (
         <div className={styles.cardWrapper}>
             {isDetailsModalOpen && <DetailsModal openCloseModal={openCloseDetailsModal} movie={movie} />}
-            {isEditModalOpen && <EditModal openCloseModal={openCloseEditModal} movie={movie}/>}
+            {isEditModalOpen && <EditModal openCloseModal={openCloseEditModal} movie={movie} />}
+            {isDeleteModalOpen && <DeleteModal openCloseModal={openCloseDeleteModal} handleDelete={handleDelete} movie={movie} />}
             <div className={styles.flagWrapper} onClick={openCloseDetailsModal}>
-                <img src={movie.poster} alt={movie.title} />
+                <div className={styles.rating}>{roundNumber(movie.rating)}</div>
+                <img src={movie.poster ? movie.poster : noImage} alt={movie.title} />
             </div>
             <div className={styles.infoWrapper}>
                 <h4>{movie.title}</h4>
-                <p>Rating: {movie.rating}</p>
+                <p>{movie.genres}</p>
+                {/* <p>{movie.genres.join(' | ')}</p> */}
                 <div className={styles.buttonsWrapper}>
                     <button onClick={openCloseEditModal}>
                         <CiEdit className={styles.editIcon} />
                     </button>
-                    <button onClick={() => handleDelete(movie.tmdbID)}>
+                    <button onClick={openCloseDeleteModal}>
                         <TiDelete className={styles.deleteIcon} />
                     </button>
                 </div>
             </div>
         </div>
-
-        // <div className={styles.cardDark}>
-        //     <div className={styles.cardWrapper}>
-        //         <div className={styles.flagWrapper}>
-        //             <img src={movie.poster} alt={movie.title} />
-        //         </div>
-        //         <div className={styles.infoWrapper}>
-        //             <h4>{movie.title}</h4>
-        //             <p>Rating: {movie.rating}</p>
-        //         </div>
-        //     </div>
-        // </div>
     )
 
 }

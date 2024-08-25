@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { moviesReordered } from '../../store/slices/moviesSlice';
 
 import Card from '../../components/card/Card';
-import CustomButton from '../../components/CustomButton/CustomButton';
+import CustomButton from '../../components/buttons/customButton/CustomButton';
 import Search from '../../components/search/Search';
 import FilterByGenre from '../../components/filterByGenre/FilterByGenre';
 import MovieSearch from '../../components/selectLanguage/MovieSearch';
@@ -56,6 +56,8 @@ function PreviewPage() {
 
     const filteredMovies = useMemo(() => {
         if (currentGenres.length === 0) return allMovies;
+        // const allGenres = allMovies[0].genres
+        // const splitGenres = allGenres.split(' | ');
         return allMovies.filter((movie) =>
             movie.genres.some((genre) => currentGenres.includes(genre))
         );
@@ -75,16 +77,14 @@ function PreviewPage() {
     }, [allMovies, filterType]);
 
     return (
-        <div className={styles.homeDark}>
-            <div className="container">
+        <div className="container" style={{ alignItems: 'start' }}>
+            <div className={styles.wrapper}>
                 <div className={styles.movieSelector}>
                     <Search />
-                    <MovieSearch/>
+                    {/* <MovieSearch/> */}
                     <FilterByGenre handleGenreChange={handleGenreChange} onFilterHandle={onFilterHandle} uniqueGenres={uniqueGenres} />
                 </div>
-                <div
-                    className={styles.moviewWrapper}
-                >
+                <div className={styles.moviewWrapper}>
                     {movies && movies.map((movie, index) => (
                         <div
                             key={movie.tmdbID}
@@ -98,7 +98,9 @@ function PreviewPage() {
                         </div>
                     ))}
                 </div>
-                <CustomButton title={'SAVE'} onHandleClick={onHandleSave} />
+                <div className={styles.buttonWrapper}>
+                    <CustomButton title={'SAVE'} onHandleClick={onHandleSave} />
+                </div>
             </div>
         </div>
     );

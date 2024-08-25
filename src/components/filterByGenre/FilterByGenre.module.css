@@ -2,12 +2,13 @@
     width: 180px;
     position: relative;
     cursor: pointer;
+    z-index: 10;
 }
 
 .dropdownWrapper {
     display: flex;
     flex-direction: row;
-    
+
 }
 
 .dropdown .selectDark {
@@ -32,23 +33,38 @@
     background-color: hsl(210, 30%, 26%);
 }
 
-.dropdown .optionsWrapperDark {
+.dropdown .optionsWrapper {
     width: 180px;
     position: absolute;
     display: flex;
     text-align: start;
-    justify-content: start;
+    /* justify-content: center; */
     flex-direction: column;
     background-color: hsl(210, 21.8%, 21.6%);
     color: hsl(0, 0%, 100%);
     border-radius: 4px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    top: 54px;
+    top: 51px;
+    /* top: 54px; */
+}
+
+.dropdown .optionsWrapper .checkboxesWrapper {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.dropdown .buttonWrapper {
+    width: 180px;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .dropdown .buttonOptions {
-    all: unset;
+    /* all: unset; */
+    width: 100%;
     padding: 5px 10px 5px 10px;
     cursor: pointer;
+    margin: 0 auto;
 }

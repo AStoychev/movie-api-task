@@ -8,7 +8,7 @@ function Header() {
         <header className={styles.headerDark}>
             {/* <div className="container"> */}
                 <div className={styles.headerWrapper}>
-                    <Link className={styles.link} to="/">MovieTask</Link>
+                    <Link className={styles.link} to="/">Movies Task</Link>
                     <div className={styles.colorModeWrapper}>
                         <button></button>
                     </div>

@@ -30,8 +30,6 @@ const MovieSearch = () => {
         fetchMovies(selectedLanguage)
     }, [selectedLanguage]);
 
-    console.log(11111111111, movies)
-
     return (
         <div>
             <SelectLanguage onLanguageChange={setSelectedLanguage} />

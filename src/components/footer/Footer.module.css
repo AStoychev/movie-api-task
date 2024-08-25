@@ -1,0 +1,114 @@
+.footerWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px 0 10px 0;
+    background-color: #050505;
+    font-family: Play, Arial, Helvetica, sans-serif;
+}
+
+.footerWrapper .logoColumn {
+    display: flex;
+    flex-direction: row;
+}
+
+.footerWrapper .logoColumn div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.footerWrapper .logoColumn p {
+    font-size: 19px;
+    color: #ffffff;
+    /* color: #C5C5FF; */
+    padding-bottom: 10px;
+}
+
+.footerWrapper .column {
+    text-align: center;
+
+    /* border: 1px solid white; */
+}
+
+.footerWrapper .column h4 {
+    font-size: 20px;
+}
+
+.footerWrapper .column .getInTouch {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    text-decoration: none;
+    padding-top: 10px;
+    transition: 0.3s;
+}
+
+.footerWrapper .column .getInTouch .footerLinks {
+    width: 100%;
+    text-decoration: none;
+    /* margin-left: 20px; */
+}
+
+.footerWrapper .column .getInTouch .footerLinks .footerIcons {
+    font-size: 35px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.footerWrapper .column .getInTouch .footerLinks .footerIcons:hover {
+    color: rgb(188, 247, 247);
+}
+
+.footerWrapper .column .getInTouch .wrappTooltip {
+    position: relative;
+}
+
+#noLink {
+    cursor: no-drop;
+}
+
+@media screen and (max-width: 600px) {
+    .footerWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footerWrapper .logoColumn {
+        display: none;
+    }
+
+    .footerWrapper .firstColumn ul li {
+        display: inline;
+        padding-bottom: 0;
+        padding-left: 10px;
+    }
+
+    .footerWrapper .firstColumn ul li .linkFooter {
+       font-size: 15px;
+    }
+
+    .footerWrapper .column h4 {
+        font-size: 15px;
+    }    
+
+    .footerWrapper .column .getInTouch {
+        padding-top: 5px;
+        padding-bottom: 15px;
+    }
+
+    .footerWrapper .column .getInTouch .footerLinks .footerIcons {
+        font-size: 28px;
+    }
+}
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (max-width: 992px) {}

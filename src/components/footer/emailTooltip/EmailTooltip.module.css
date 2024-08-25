@@ -1,0 +1,78 @@
+.emailWrapper {
+    position: absolute;
+    bottom: 50%;
+    left: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid rgb(159, 204, 190);
+}
+
+.emailWrapper div {
+    padding: 5px 5px 5px 5px;
+    border-radius: 10px;
+    border-top: 1px solid rgb(159, 204, 190);
+    cursor: pointer;
+    transition: 0.3;
+}
+
+.emailWrapper div:hover {
+    background-color: rgba(28, 109, 83, 0.639);
+    border-radius: 10px;
+}
+
+.emailWrapper p {
+    font-size: 15px;
+    font-family: Play, Arial, Helvetica, sans-serif;
+}
+
+.emailWrapper .talkToMe {
+    width: 100%;
+    font-size: 15px;
+    font-family: Play, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color: transparent;
+    color: rgb(159, 204, 190);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    outline: none;
+    border: none;
+}
+
+.emailWrapper .talkToMe:hover {
+    background-color: rgb(28, 109, 84);
+    color: rgb(255, 255, 255);
+}
+
+.emailWrapper .copyEmail {
+    font-size: 15px;
+    font-family: Play, Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: rgb(159, 204, 190);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.emailWrapper .checkmarkCopied {
+    color: rgb(1, 250, 5);
+    font-size: 15px;
+}
+
+@media screen and (max-width: 600px) {
+    .emailWrapper {
+        width: 180px;
+        position: absolute;
+        bottom: 100%;
+        left: -500%;
+        background-color: rgb(28, 6, 49);
+    }
+}
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (max-width: 992px) {}

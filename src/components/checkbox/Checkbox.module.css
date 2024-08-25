@@ -2,6 +2,7 @@
     display: flex;
     text-align: center;
     align-items: center;
+    padding: 5px;
     gap: 20px;
 }
 
@@ -55,6 +56,10 @@
 .titleWrapper {
     font-size: 20px;
     cursor: pointer;
+}
+
+.titleWrapper p {
+    font-weight: 300;
 }
 
 .titleScratch {

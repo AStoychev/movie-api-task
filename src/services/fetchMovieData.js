@@ -33,7 +33,7 @@ async function fetchMovieData(movies) {
                 tmdbID: movie.id,
                 title: movie.title,
                 overview: movie.overview,
-                actors: movie.credits.cast.slice(0, 10).map(actor => actor.name),
+                actors: movie.credits.cast.slice(0, 10).map(actor => actor.name).join(', '),
                 genres: movie.genres.map((genre) => genre.name),
                 poster: movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : null,
                 release: movie.release_date,

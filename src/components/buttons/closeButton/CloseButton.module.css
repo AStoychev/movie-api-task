@@ -1,0 +1,32 @@
+.buttonWrapper {
+    position: absolute;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    top: 3px;
+    right: 3px;
+    color: rgb(255, 255, 255);
+    z-index: 11;
+}
+
+.buttonWrapper .modalClose {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(177, 50, 50, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 30px;
+    transition: 0.3s;
+}
+
+.buttonWrapper .modalClose:hover {
+    background-color: rgba(164, 2, 2, 0.3);
+}

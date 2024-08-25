@@ -1,4 +1,5 @@
 import { useState } from "react";
+import CloseButton from "../../buttons/closeButton/CloseButton";
 import TrailerIcon from "../../trailerIcon/TrailerIcon";
 
 import styles from './DetailsModal.module.css';
@@ -13,27 +14,19 @@ const DetailsModal = ({ openCloseModal, movie }) => {
     return (
         <div className={styles.modalOverlay} onClick={openCloseModal}>
             <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
-                <div className={styles.buttonWrapper}>
+                <CloseButton openCloseModal={openCloseModal}/>
+                {/* <div className={styles.buttonWrapper}>
                     <button className={styles.modalClose} onClick={openCloseModal}>x</button>
-                </div>
+                </div> */}
                 <div className={styles.contentWrapper}>
                     <div className={styles.imageWrapper}>
                         <img src={movie.poster} alt={movie.title} />
                         <TrailerIcon trailer={movie.trailer}/>
-                        {/* <div className={styles.videoPlay}>
-                            <div className={styles.crossed}>
-                                <a
-                                    href={movie.trailer}
-                                    target="_blank"
-                                >
-                                    <IoIosPlay className={styles.videoIcon} />
-                                </a>
-                            </div>
-                        </div> */}
                     </div>
                     <div className={styles.detailsWrapper}>
                         <h4>{movie.title}</h4>
-                        <p>{movie.genres.join(' | ')}</p>
+                        <p>{movie.genres}</p>
+                        {/* <p>{movie.genres.join(' | ')}</p> */}
                         <div className={styles.detailsWrapperRow}>
                             <div className={styles.detailsWrapperColumn}>
                                 <span>RATING</span>
@@ -41,7 +34,7 @@ const DetailsModal = ({ openCloseModal, movie }) => {
                             </div>
                             <div className={styles.detailsWrapperColumn}>
                                 <span>DURATION</span>
-                                <p>{movie.duration}mins</p>
+                                <p>{movie.duration} min</p>
                             </div>
                             <div className={styles.detailsWrapperColumn}>
                                 <span>PUBLISH</span>
@@ -84,7 +77,8 @@ const DetailsModal = ({ openCloseModal, movie }) => {
                         </div>
                         <div className={styles.radioButtonsInformation}>
                             {selected === 'option1' && <p>{movie.overview}</p>}
-                            {selected === 'option2' && <p>{movie.actors.join(', ')}</p>}
+                            {selected === 'option2' && <p>{movie.actors}</p>}
+                            {/* {selected === 'option2' && <p>{movie.actors.join(', ')}</p>} */}
                             {selected === 'option3' && <p>{movie.director}</p>}
                         </div>
                         {/* <p>{movie.overview}</p> */}

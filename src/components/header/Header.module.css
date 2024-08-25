@@ -17,7 +17,9 @@
 
 .headerWrapper .link {
     all: unset;
-    font-weight: 800;
+    font-size: 20px;
+    font-weight: 300;
+    font-family: Play, Arial, Helvetica, sans-serif;
     cursor: pointer;
 }
 

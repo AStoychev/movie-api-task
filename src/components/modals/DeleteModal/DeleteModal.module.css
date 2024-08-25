@@ -12,35 +12,45 @@
 }
 
 .modalOverlay .modalContent {
-    /* width: 350px;
-    height: 200px; */
-    width: 80%;
+    width: 350px;
+    height: 200px;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    
-
+    /* padding-top: 10px;
+    padding-bottom: 10px; */
     background: rgb(50, 50, 50);
     /* padding: 20px; */
     border-radius: 10px;
-    max-width: 480px;
+    max-width: 380px;
     box-sizing: border-box;
-    padding: 10px;
-
-    /* border: 3px solid red; */
+    font-family: Play, Arial, Helvetica, sans-serif;
+    /* font-family: "Roboto", sans-serif; */
 }
 
-.modalOverlay .modalContent h3 {
+.modalOverlay h3 {
     font-size: 20px;
     font-weight: 300;
 }
 
-.modalOverlay .modalContent .contentWrapper {
+.modalOverlay .textWrapper {
+    /* height: 100%; */
     display: flex;
     flex-direction: column;
-    text-align: start;
-    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: rgb(215, 215, 215);
+    gap: 5px;
+}
+
+.modalOverlay .textWrapper p {
+    font-size: 18px;
+}
+
+.modalOverlay .textWrapper .movie {
+    font-weight: 700;
 }
 
 .modalOverlay .buttonWrapper {
