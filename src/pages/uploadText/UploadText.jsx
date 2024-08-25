@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { moviesFetched } from "../../store/slices/moviesSlice";
 
-import Checkbox from "../../components/Checkbox/Checkbox";
+import Checkbox from "../../components/checkbox/Checkbox";
 import CustomButton from "../../components/buttons/customButton/CustomButton";
 
 import fetchMovieData from "../../services/fetchMovieData";
