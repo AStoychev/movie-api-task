@@ -7,10 +7,7 @@
 button {
     all: unset;
     background-color: rgb(57,131,138);
-    /* background-color: rgba(21, 95, 94, 0.598); */
-    /* background-color: rgba(46, 206, 204, 1); */
     padding: 10px 50px 10px 50px;
-    /* padding: 10px; */
     font-weight: 300;
     border-radius: 5px;
     cursor: pointer;
@@ -19,5 +16,4 @@ button {
 
 button:hover {
     background-color: rgba(57, 131, 138, 0.8);
-    /* background-color: rgba(46, 206, 204, 0.8); */
 }
