@@ -3,9 +3,9 @@ import axios from 'axios';
 import SelectLanguage from './SelectLanguage';
 
 const API_KEY = import.meta.env.VITE_API_KEY
-const API_URL = 'https://api.themoviedb.org/3';
+const API_URL = 'https://api.themoviedb.org/3/movie/';
 
-const MovieSearch = () => {
+const Language = () => {
     const [movies, setMovies] = useState([]);
     const [selectedLanguage, setSelectedLanguage] = useState('en');
 
@@ -25,17 +25,14 @@ const MovieSearch = () => {
     };
 
     useEffect(() => {
-        // Fetch movies when the component mounts or language changes
-        // fetchMovies('your initial query'); // Replace with your initial query
         fetchMovies(selectedLanguage)
     }, [selectedLanguage]);
 
     return (
         <div>
             <SelectLanguage onLanguageChange={setSelectedLanguage} />
-            {/* Render movie cards or other UI components */}
         </div>
     );
 };
 
-export default MovieSearch;
+export default Language;
