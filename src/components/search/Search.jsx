@@ -16,7 +16,6 @@ const Search = () => {
         setQuery('')
     }
 
-    // Handle input change
     const handleInputChange = (e) => {
         const value = e.target.value;
         setQuery(value);

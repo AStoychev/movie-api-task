@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    movies: [],  // Initial state with an empty array of movies
-    status: 'idle', // Possible values: 'idle', 'loading', 'succeeded', 'failed'
+    movies: [],
+    status: 'idle',
     error: null
 };
 
@@ -10,22 +10,19 @@ const moviesSlice = createSlice({
     name: 'movies',
     initialState,
     reducers: {
-        // Reducer to store fetched movie data
         moviesFetched: (state, action) => {
             state.movies = action.payload;
             state.status = 'succeeded';
         },
-        // Reducer to handle loading state
         moviesLoading: (state) => {
             state.status = 'loading';
         },
-        // Reducer to handle error state
         moviesFailed: (state, action) => {
             state.status = 'failed';
             state.error = action.payload;
         },
         movieAdded: (state, action) => {
-            state.movies.push(action.payload); // Add the new movie to the movies array
+            state.movies.push(action.payload);
         },
         movieEdited: (state, action) => {
             const updatedMovie = action.payload;

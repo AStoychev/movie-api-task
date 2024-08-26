@@ -3,11 +3,9 @@
 }
 
 .inputField {
-    /* all: unset; */
     width: 100%;
     box-sizing: border-box;
     padding: 8px;
-    /* margin-bottom: 10px; */
     background-color: rgb(23,23,23);
     color: rgba(220, 216, 216, 0.776);
     box-shadow: none;

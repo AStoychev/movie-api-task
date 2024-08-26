@@ -19,12 +19,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    /* padding-top: 10px;
-    padding-bottom: 10px; */
     background: rgb(50, 50, 50);
-    /* padding: 20px; */
     border-radius: 10px;
-    /* max-width: 380px; */
     box-sizing: border-box;
     font-family: Play, Arial, Helvetica, sans-serif;
     border: 1px solid rgba(227, 222, 222, 0.1);
@@ -36,7 +32,6 @@
 }
 
 .modalOverlay .textWrapper {
-    /* height: 100%; */
     display: flex;
     flex-direction: column;
     text-align: center;

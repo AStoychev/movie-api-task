@@ -1,13 +1,10 @@
 .wrapper {
     width: 100%;
     min-height: 83vh;
-    /* height: auto; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 10px;
-    /* background-color: rgb(23,33,41); */
-    /* background-color: hsl(207, 26%, 17%); */
     color: hsl(0, 0%, 100%);
     z-index: 1;
 }
@@ -18,7 +15,6 @@
     flex-direction: row;
     justify-content: space-between;
     margin-top: 10px;
-    /* padding-top: 45px; */
 }
 
 .moviewWrapper {
@@ -26,25 +22,10 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 15px;
-    /* gap: 10px; */
-    /* justify-content: start; */
 }
 
 .movies {
     display: flex;
-    /* flex-basis: calc(25% - 10px); */
-    /* align-items: center;
-    text-align: center;
-    justify-content: center; */
-    /* margin-bottom: 10px; */
-    /* background-color: #173e5864; */
-    /* background-color: #3498db; */
-    /* color: white; */
-    /* padding-top: 20px; */
-    /* padding: 20px; */
-    /* box-sizing: border-box;
-    transition: background-color 0.3s, box-shadow 0.3s; */
-    /* border-radius: 10px; */    
 }
 
 .wrapper .buttonWrapper {
@@ -69,8 +50,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-
-        /* border: 3px solid red; */
     }
 }
 

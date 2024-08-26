@@ -39,7 +39,6 @@
     width: inherit;
     height: inherit;
     border: 3px solid #e1cbcb;
-    /* border: 3px solid #434343; */
     border-radius: 6px;
     transition: all 0.375s;
 }
@@ -58,8 +57,6 @@
     flex-direction: row;
     font-size: 20px;
     cursor: pointer;
-
-    /* border: 3px solid red; */
 }
 
 .titleWrapper p {

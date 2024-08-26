@@ -40,7 +40,6 @@
     height: 2px;
     background-color: red;
     transform: rotate(45deg);
-    /* Adjust the angle of the line */
     transform-origin: center;
 }
 

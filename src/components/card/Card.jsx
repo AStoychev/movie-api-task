@@ -6,8 +6,6 @@ import DetailsModal from "../modals/DetailsModal/DetailsModal";
 import EditModal from "../modals/EditModal/EditModal";
 import DeleteModal from "../modals/DeleteModal/DeleteModal";
 
-import { formatGenres } from "../../functions/formatGenres";
-
 import { CiEdit } from "react-icons/ci";
 import { TiDelete } from "react-icons/ti";
 import styles from './Card.module.css';
@@ -66,7 +64,6 @@ function Card({ movie }) {
             </div>
         </div>
     )
-
 }
 
 export default Card;

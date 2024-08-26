@@ -1,15 +1,3 @@
-/* .cardDark {
-    max-width: 300px;
-    height: 500px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    cursor: pointer;
-    border-radius: 4px;
-    background-color: hsl(210, 21.8%, 21.6%);
-    box-shadow: 2px 2px 2px rgba(45, 44, 44, 0.194);
-} */
-
 .cardWrapper {
     display: flex;
     flex-direction: column;
@@ -23,13 +11,9 @@
     box-sizing: border-box;
     transition: background-color 0.3s, box-shadow 0.3s;
     padding-bottom: 5px;
-    /* padding: 25px 30px 10px 30px; */
     border-radius: 10px;
     cursor: -webkit-grab; cursor: grab;
-    /* padding-bottom: 15px; */
     gap: 5px;
-
-    /* border: 3px solid red; */
 }
 
 .cardWrapper:hover {
@@ -39,16 +23,11 @@
 .cardWrapper .detailsWrapper {
     width: 200px;
     padding: 25px 30px 0 30px;
-    /* display: flex;
-    flex-direction: column; */
-    /* border: 3px solid rgb(60, 255, 0); */
 }
 
 .cardWrapper .flagWrapper {
     position: relative;
     display: flex;
-
-    /* border: 3px solid greenyellow; */
 }
 
 .cardWrapper .flagWrapper .rating {
@@ -58,7 +37,6 @@
     color: rgba(0, 0, 0, 0.639);
     font-size: 13px;
     font-weight: 700;
-    /* top: 50%; */
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 10px;
@@ -70,11 +48,8 @@
     width: 100%;
     height: 300px;
     border-radius: 5px;
-    /* border-top-left-radius: 6px;
-    border-top-right-radius: 6px; */
     margin-bottom: 10px;
     filter: drop-shadow(0 0 0.75rem rgba(243, 230, 230, 0.338));
-    /* cursor: pointer; */
 }
 
 .cardWrapper .infoWrapper {
@@ -83,9 +58,6 @@
     text-align: center;
     align-items: center;
     gap: 5px;
-    /* padding: 20px; */
-
-    /* border: 3px solid white; */
 }
 
 .cardWrapper .infoWrapper h4 {
@@ -95,8 +67,6 @@
     justify-content: center;
     font-size: 18px;
     font-weight: 300;
-    /* padding-top: 5px;
-    padding-bottom: 25px; */
 }
 
 .cardWrapper .infoWrapper p {
@@ -106,7 +76,6 @@
     justify-content: center;
     font-weight: 600;
     color:#ffffff70;
-    /* padding-bottom: 10px; */
 }
 
 .cardWrapper button {
@@ -116,23 +85,18 @@
 .cardWrapper .deleteIcon {
     font-size: 35px;
     color: rgba(177, 50, 50, 0.8);
-    /* color: rgb(177, 50, 50); */
-    /* color: rgb(206, 56, 56); */
     cursor: pointer;
     transition: 0.3s;
 }
 
 .cardWrapper .deleteIcon:hover {
     color: rgba(177, 50, 50, 0.5);
-    /* color: rgba(159, 34, 34, 0.8); */
-    /* color: rgba(206, 56, 56, 0.8); */
 }
 
 .cardWrapper .buttonsWrapper {
     display: flex;
     flex-direction: row;
     gap: 10px;
-    /* border: 3px solid greenyellow; */
 }
 
 .cardWrapper .editIcon {
@@ -144,5 +108,4 @@
 
 .cardWrapper .editIcon:hover {
     color: rgba(166, 166, 215, 0.5);
-    /* color: rgba(30, 30, 97, 0.8); */
 }

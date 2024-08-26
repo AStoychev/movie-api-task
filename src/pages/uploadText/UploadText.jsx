@@ -73,9 +73,6 @@ function UploadText() {
 
     const onHandleClick = () => {
         fetchMovieData(checkedTitles).then(result => {
-            // setTimeout(() => {
-            //     dispatch(moviesFetched(result));
-            // }, 2000)
             dispatch(moviesFetched(result));
         });
         navigate('/preview');

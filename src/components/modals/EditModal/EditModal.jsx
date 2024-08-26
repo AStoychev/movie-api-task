@@ -38,8 +38,7 @@ function EditModal({ openCloseModal, movie }) {
             ...movieData,
             genres: typeof movieData.genres === 'string'
             ? movieData.genres.split(',').map(genre => genre.trim()) 
-            : movieData.genres, // If it's not a string, use it as is
-            // genres: movieData.genres.split(',').map(genre => genre.trim()) // Convert string back to array
+            : movieData.genres,
         };
         dispatch(movieEdited(updatedMovie));
         openCloseModal();
@@ -66,7 +65,6 @@ function EditModal({ openCloseModal, movie }) {
                             <button onClick={openCloseModal} className={styles.cancel}>Cancel</button>
                             <button type="submit" className={styles.delete}>Save</button>
                         </div>
-                        {/* <button type="submit">Save</button> */}
                     </form>
                 </div>
             </div>

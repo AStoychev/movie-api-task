@@ -5,23 +5,13 @@
     flex-direction: column;
     align-items: center;
     margin-top: 10px;
-    /* margin-top: 35px; */
-
     gap: 15px;
-
-    /* border: 3px solid red; */
 }
 
 .uploadWrapper {
     width: 50%;
     min-height: 300px;
-    /* max-height: 300px; */
-    /* width: 50%;
-    height: 50%; */
     background-color: rgb(23, 33, 41);
-    /* background-color: rgba(165, 187, 162, 0.8); */
-    /* background-color: rgba(165, 187, 162, 0.8); */
-    /* box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5); */
     border: dashed 3px rgba(38, 47, 129, 0.687);
     color: #ffffff;
     display: flex;
@@ -29,26 +19,18 @@
     text-align: center;
     align-items: center;
     justify-content: center;
-    /* padding: 100px; */
     border-radius: 10px;
-    /* margin: 0 auto;
-    gap: 10px; */
-
-    /* border: 3px solid red; */
 }
 
 .uploadWrapper .dragZone {
     width: 100%;
     min-height: 300px;
-    /* height: 100%; */
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
     justify-content: center;
     gap: 30px;
-
-    /* border: 3px solid red; */
 }
 
 .filmStrip {
@@ -69,15 +51,11 @@
     text-align: center;
     align-items: center;
     justify-content: center;
-    /* border-radius: 50px; */
     transition: 0.3s;
-
-    /* border: 3px solid red; */
 }
 
 .btnUpload:hover {
     color: rgb(182, 166, 166);
-    /* border: 2px solid rgb(182, 166, 166); */
 }
 
 .icon {
@@ -91,9 +69,6 @@
     flex-direction: column;
     gap: 15px;
     font-family: Play, Arial, Helvetica, sans-serif;
-    /* font-family: "Roboto", sans-serif; */
-    /* font-family: 'Courier New', Courier, monospace; */
-    /* border: 3px solid red; */
 }
 
 .uploadWrapper .textWrapper h3 {
@@ -110,10 +85,8 @@ input[type="file"] {
 }
 
 input[type="checkbox"] {
-    /* display: none; */
     width: 20px;
     height: 20px;
-    /* border: 1px solid red; */
 }
 
 .customFileUpload {
@@ -136,8 +109,6 @@ input[type="checkbox"] {
 
 .moviesWrapper .movies {
     padding: 10px;
-
-    /* border: 3px solid red */
 }
 
 @media only screen and (max-width: 375px) {}

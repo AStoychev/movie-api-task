@@ -38,13 +38,11 @@
     position: absolute;
     display: flex;
     text-align: start;
-    /* justify-content: center; */
     flex-direction: column;
     background-color: hsl(210, 21.8%, 21.6%);
     color: hsl(0, 0%, 100%);
     border-radius: 4px;
     top: 51px;
-    /* top: 54px; */
 }
 
 .dropdown .optionsWrapper .checkboxesWrapper {
@@ -62,7 +60,6 @@
 }
 
 .dropdown .buttonOptions {
-    /* all: unset; */
     width: 100%;
     padding: 5px 10px 5px 10px;
     cursor: pointer;

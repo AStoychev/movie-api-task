@@ -1,7 +1,6 @@
 .header {
     width: 100%;
     background-color: #050505;
-    /* background-color: hsl(210, 21.8%, 21.6%); */
     color: hsl(0, 0%, 100%);
     border-bottom: 3px solid rgba(0, 0, 0, 0.272);
 }
