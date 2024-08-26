@@ -27,9 +27,7 @@
     /* max-width: 380px; */
     box-sizing: border-box;
     font-family: Play, Arial, Helvetica, sans-serif;
-    /* font-family: "Roboto", sans-serif; */
-
-    /* border: 3px solid red; */
+    border: 1px solid rgba(227, 222, 222, 0.1);
 }
 
 .modalOverlay h3 {
@@ -62,42 +60,43 @@
     gap: 10px;
 }
 
-.modalOverlay .buttonWrapper .cancel {
+.modalOverlay .buttonWrapper .cancel,
+.modalOverlay .buttonWrapper .delete {
+    width: 120px;
+    text-align: center;
     padding: 10px;
     cursor: pointer;
     border-radius: 5px;
-    border: 1px solid rgb(53, 166, 155);
+    border: 1px solid;
     transition: 0.3s;
+}
+
+.modalOverlay .buttonWrapper .cancel {
+    border: 1px solid rgb(53, 166, 155);
+}
+
+.modalOverlay .buttonWrapper .delete {
+    border: 1px solid rgb(184, 76, 75);
 }
 
 .modalOverlay .buttonWrapper .cancel:hover {
     background-color: rgb(53, 166, 155);
-    border-radius: 5px;
-    border: 1px solid rgba(53, 166, 155, 0);
-}
-
-.modalOverlay .buttonWrapper .delete {
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    border: 1px solid rgb(184, 76, 75);
-    transition: 0.3s;
+    border-color: transparent;
 }
 
 .modalOverlay .buttonWrapper .delete:hover {
     background-color: rgb(184, 76, 75);
-    border-radius: 5px;
-    border: 1px solid rgba(53, 166, 155, 0);
+    border-color: transparent;
 }
 
 @media only screen and (max-width: 375px) {}
 
 @media only screen and (max-width: 600px) {}
 
-@media only screen and (max-width: 600px) {    
+@media only screen and (max-width: 600px) {
     .modalOverlay .modalContent {
         width: 94%;
-        height:28%;
+        height: 28%;
     }
 }
 

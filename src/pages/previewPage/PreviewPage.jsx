@@ -94,6 +94,7 @@ function PreviewPage() {
             <div className={styles.wrapper}>
                 <div className={styles.movieSelector}>
                     <Search />
+                    {/* <MovieSearch /> */}
                     <FilterByGenre handleGenreChange={handleGenreChange} onFilterHandle={onFilterHandle} uniqueGenres={getUniqueGenres()} />
                 </div>
                 {noMovies && <NoMovies />}

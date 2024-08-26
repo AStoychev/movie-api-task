@@ -22,11 +22,12 @@
     color: white;
     box-sizing: border-box;
     transition: background-color 0.3s, box-shadow 0.3s;
+    padding-bottom: 5px;
     /* padding: 25px 30px 10px 30px; */
     border-radius: 10px;
     cursor: -webkit-grab; cursor: grab;
     /* padding-bottom: 15px; */
-    /* gap: 5px; */
+    gap: 5px;
 
     /* border: 3px solid red; */
 }
@@ -114,28 +115,34 @@
 
 .cardWrapper .deleteIcon {
     font-size: 35px;
-    color: rgb(177, 50, 50);
+    color: rgba(177, 50, 50, 0.8);
+    /* color: rgb(177, 50, 50); */
     /* color: rgb(206, 56, 56); */
     cursor: pointer;
     transition: 0.3s;
 }
 
 .cardWrapper .deleteIcon:hover {
-    color: rgba(159, 34, 34, 0.8);
+    color: rgba(177, 50, 50, 0.5);
+    /* color: rgba(159, 34, 34, 0.8); */
     /* color: rgba(206, 56, 56, 0.8); */
 }
 
 .cardWrapper .buttonsWrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
     /* border: 3px solid greenyellow; */
 }
 
 .cardWrapper .editIcon {
     font-size: 35px;
-    color: rgba(166, 166, 215, 0.804);
+    color: rgba(166, 166, 215, 0.8);
     cursor: pointer;
     transition: 0.3s;
 }
 
 .cardWrapper .editIcon:hover {
-    color: rgba(30, 30, 97, 0.8);
+    color: rgba(166, 166, 215, 0.5);
+    /* color: rgba(30, 30, 97, 0.8); */
 }

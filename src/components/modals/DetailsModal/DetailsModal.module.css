@@ -22,6 +22,8 @@
     box-sizing: border-box;
     font-family: Play, Arial, Helvetica, sans-serif;
     /* font-family: "Roboto", sans-serif; */
+    filter: drop-shadow(0 0 0.75rem #8dc5fe65);
+    border: 1px solid rgba(227, 222, 222, 0.1);
 }
 
 .modalOverlay .modalContent .contentWrapper {
@@ -116,9 +118,12 @@
     text-align: start;
     align-items: start;
     justify-content: center;
+    padding-left: 5px;
     box-sizing: border-box;
     white-space: wrap;
     overflow-y: auto;
+
+    /* border: 3px solid red; */
 }
 
 @media only screen and (max-width: 375px) {}
