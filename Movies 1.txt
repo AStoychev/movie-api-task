@@ -1,3 +1,4 @@
+Fiz filter by genre checkboches is check or field
 Friends with Benefits
 Point Break
 Inception

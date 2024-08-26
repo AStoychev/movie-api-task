@@ -21,30 +21,30 @@
 
 .moviewWrapper {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
-    /* justify-content: space-evenly */
+    /* gap: 10px; */
+    /* justify-content: start; */
 }
 
 .movies {
     display: flex;
     flex-basis: calc(25% - 10px);
-    align-items: center;
+    /* align-items: center;
     text-align: center;
-    justify-content: center;
-    margin-bottom: 10px;
-    background-color: #173e5864;
+    justify-content: center; */
+    /* margin-bottom: 10px; */
+    /* background-color: #173e5864; */
     /* background-color: #3498db; */
-    color: white;
-    padding-top: 20px;
+    /* color: white; */
+    /* padding-top: 20px; */
     /* padding: 20px; */
-    box-sizing: border-box;
-    transition: background-color 0.3s, box-shadow 0.3s;
-    border-radius: 10px;
-}
+    /* box-sizing: border-box;
+    transition: background-color 0.3s, box-shadow 0.3s; */
+    /* border-radius: 10px; */
 
-.movies:hover {
-    background-color: #666;
+    
 }
 
 .wrapper .buttonWrapper {
@@ -68,6 +68,9 @@
     .moviewWrapper {
         display: flex;
         flex-direction: column;
+        align-items: center;
+
+        /* border: 3px solid red; */
     }
 }
 

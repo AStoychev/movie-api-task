@@ -46,21 +46,23 @@ function Card({ movie }) {
             {isDetailsModalOpen && <DetailsModal openCloseModal={openCloseDetailsModal} movie={movie} />}
             {isEditModalOpen && <EditModal openCloseModal={openCloseEditModal} movie={movie} />}
             {isDeleteModalOpen && <DeleteModal openCloseModal={openCloseDeleteModal} handleDelete={handleDelete} movie={movie} />}
-            <div className={styles.flagWrapper} onClick={openCloseDetailsModal}>
-                <div className={styles.rating}>{roundNumber(movie.rating)}</div>
-                <img src={movie.poster ? movie.poster : noImage} alt={`Movie Image ${movie.title}`} />
-            </div>
-            <div className={styles.infoWrapper}>
-                <h4>{movie.title}</h4>
-                <p>{movie.genres.join(' | ')}</p>
-                <div className={styles.buttonsWrapper}>
-                    <button onClick={openCloseEditModal}>
-                        <CiEdit className={styles.editIcon} />
-                    </button>
-                    <button onClick={openCloseDeleteModal}>
-                        <TiDelete className={styles.deleteIcon} />
-                    </button>
+            <div className={styles.detailsWrapper} onClick={openCloseDetailsModal}>
+                <div className={styles.flagWrapper}>
+                    <div className={styles.rating}>{roundNumber(movie.rating)}</div>
+                    <img className={styles.cardImage} src={movie.poster ? movie.poster : noImage} alt={`Movie Image ${movie.title}`} />
                 </div>
+                <div className={styles.infoWrapper}>
+                    <h4>{movie.title}</h4>
+                    <p>{movie.genres.join(' | ')}</p>
+                </div>
+            </div>
+            <div className={styles.buttonsWrapper}>
+                <button onClick={openCloseEditModal}>
+                    <CiEdit className={styles.editIcon} />
+                </button>
+                <button onClick={openCloseDeleteModal}>
+                    <TiDelete className={styles.deleteIcon} />
+                </button>
             </div>
         </div>
     )

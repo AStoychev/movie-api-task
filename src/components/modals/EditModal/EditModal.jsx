@@ -33,7 +33,6 @@ function EditModal({ openCloseModal, movie }) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('DATA: ', movie)
         const updatedMovie = {
             ...movie,
             ...movieData,

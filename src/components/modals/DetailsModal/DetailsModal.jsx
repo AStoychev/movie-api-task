@@ -19,7 +19,7 @@ const DetailsModal = ({ openCloseModal, movie }) => {
                 <CloseButton openCloseModal={openCloseModal} />
                 <div className={styles.contentWrapper}>
                     <div className={styles.imageWrapper}>
-                        <img src={movie.poster ? movie.poster : noImage} alt={`Movie Image ${movie.title}`} />
+                        <img className={styles.image} src={movie.poster ? movie.poster : noImage} alt={`Movie Image ${movie.title}`} />
                         <TrailerIcon trailer={movie.trailer} />
                     </div>
                     <div className={styles.detailsWrapper}>

@@ -9,10 +9,7 @@ import CustomButton from "../../components/buttons/customButton/CustomButton";
 import fetchMovieData from "../../services/fetchMovieData";
 
 import { FiUploadCloud } from "react-icons/fi";
-// import { MdFileUpload } from "react-icons/md";
 import styles from "./UploadText.module.css";
-
-import filmStrip from "../../assets/movie-roll.png";
 
 function UploadText() {
     const [movies, setMovies] = useState([]);
@@ -27,7 +24,6 @@ function UploadText() {
             const movieTitles = text.split('\r\n').filter(title => title.trim());
             const uniqueTitles = [...new Set(movieTitles)];
             setMovies(uniqueTitles.map((title) => ({ title, selected: true })));
-            // setMovies(movieTitles.map((title) => ({ title, selected: true })));
         };
         reader.readAsText(file);
     };
@@ -87,9 +83,6 @@ function UploadText() {
 
     return (
         <div className="container">
-            {/* <div className={styles.filmStrip}>
-                <img className={styles.imageBackground} src={filmStrip} alt="Film Strip" />
-            </div> */}
             <div className={styles.wrapper}>
                 <div className={styles.uploadWrapper}>
                     <div
@@ -98,7 +91,6 @@ function UploadText() {
                         onDragEnter={handleDragEnter}
                         onDragLeave={handleDragLeave}
                         onDragOver={handleDragOver}
-                    // style={{ border: dragging ? '2px dashed #ccc' : '2px solid transparent' }}
                     >
                         <div className={styles.btnUpload}>
                             <label htmlFor="file-upload" className={styles.customFileUpload}>

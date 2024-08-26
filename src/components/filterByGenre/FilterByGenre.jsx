@@ -13,6 +13,11 @@ export default function FilterByGenre({ handleGenreChange, onFilterHandle, uniqu
         handleGenreChange(value, checked);
     };
 
+    const onHandleClick = () => {
+        onFilterHandle();
+        setIsOpen(false);
+    }
+
     return (
         <div className={styles.dropdown}>
             <div className={styles.dropdownWrapper}>
@@ -37,7 +42,7 @@ export default function FilterByGenre({ handleGenreChange, onFilterHandle, uniqu
                         ))}
                     </div>
                     <div className={styles.buttonWrapper}>
-                        <button onClick={onFilterHandle} className={styles.buttonOptions}>FILTER</button>
+                        <button onClick={onHandleClick} className={styles.buttonOptions}>FILTER</button>
                     </div>
                 </div>
             )}
