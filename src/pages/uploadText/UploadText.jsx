@@ -101,7 +101,6 @@ function UploadText() {
                                 style={{ display: 'none' }}
                             />
                         </div>
-
                         <div className={styles.textWrapper}>
                             <h3>Drag & Drop</h3>
                             <p>or click over cloud and select .txt file from device</p>
