@@ -5,7 +5,6 @@ Web application which take movies data from API and then processes it into the r
 
 ## How to install and run the project?
 
-
 1. Clone the repo: `https://github.com/AStoychev/movie-api-task.git` .
 
 2. In the terminal, enter the command: `npm install`.
