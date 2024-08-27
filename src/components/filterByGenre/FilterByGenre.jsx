@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import styles from './FilterByGenre.module.css';
 
@@ -6,8 +6,8 @@ const FILTER_STRING = 'Filter by Genre'
 
 export default function FilterByGenre({ handleGenreChange, onFilterHandle, uniqueGenres }) {
     const [selectedGenres, setSelectedGenres] = useState([]);
-
     const [isOpen, setIsOpen] = useState(false);
+    const dropdownRef = useRef(null);
 
     const handleSelectChange = (e) => {
         const { value, checked } = e.target;
@@ -25,13 +25,26 @@ export default function FilterByGenre({ handleGenreChange, onFilterHandle, uniqu
         setIsOpen(false);
     }
 
+    const handleClickOutside = (event) => {
+        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+            setIsOpen(false);
+        };
+    };
+
+    useEffect(() => {
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
     useEffect(() => {
         const selected = uniqueGenres.filter(genre => selectedGenres.includes(genre));
         setSelectedGenres(selected);
     }, [uniqueGenres]);
 
     return (
-        <div className={styles.dropdown}>
+        <div className={styles.dropdown} ref={dropdownRef}>
             <div className={styles.dropdownWrapper}>
                 <button onClick={() => setIsOpen(!isOpen)} className={styles.selectButton}>
                     {FILTER_STRING}

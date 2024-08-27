@@ -39,9 +39,20 @@ const moviesSlice = createSlice({
         moviesReordered: (state, action) => {
             state.movies = action.payload;
         },
+        moviesChangeLanguage: (state, action) => {
+            const updates = action.payload;
+            updates.forEach(update => {
+                const { id, title, overview } = update;
+                const existingMovie = state.movies.find(movie => movie.tmdbID === id);
+                if (existingMovie) {
+                    existingMovie.title = title;
+                    existingMovie.overview = overview;
+                }
+            });
+        }
     }
 });
 
-export const { moviesFetched, moviesLoading, moviesFailed, movieAdded, movieEdited, movieDeleted, moviesReordered } = moviesSlice.actions;
+export const { moviesFetched, moviesLoading, moviesFailed, movieAdded, movieEdited, movieDeleted, moviesReordered, moviesChangeLanguage } = moviesSlice.actions;
 
 export default moviesSlice.reducer;

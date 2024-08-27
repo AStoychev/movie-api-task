@@ -1,0 +1,94 @@
+.dropdownContainer {
+    width: 15%;
+    position: relative;
+    cursor: pointer;
+    z-index: 11;
+}
+
+.dropdownWrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.dropdownContainer .selectButton {
+    all: unset;
+    width: 100%;
+    padding: 18px 30px 18px 30px;
+    display: flex;
+    flex-direction: row;
+    text-align: start;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    background-color: hsl(210, 21.8%, 21.6%);
+    color: hsl(0, 0%, 100%);
+    font-weight: 300;
+    border: none;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.dropdownContainer .selectButton:hover {
+    background-color: hsl(210, 30%, 26%);
+}
+
+.dropdownContainer .selectedOption {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.dropdownContainer .optionsContainer {
+    position: absolute;
+    top: 51px;
+    left: 0;
+    right: 0;
+    background-color: hsl(210, 21%, 28%);
+    border-radius: 4px;
+    z-index: 1;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+    width: 100%;
+    display: flex;
+    text-align: start;
+    flex-direction: column;
+    color: hsl(0, 0%, 100%);
+    border-radius: 4px;
+}
+
+.dropdownContainer .optionsWrapper {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.dropdownContainer .option {
+    padding: 10px;
+    transition: background-color 0.2s;
+}
+
+.dropdownContainer .option:hover {
+    background-color: hsl(210, 21.8%, 21.6%, 0.5);
+}
+
+/* .dropdownContainer .dropdownContainer .icon {
+    font-size: 20px;
+} */
+
+@media only screen and (max-width: 375px) {}
+
+@media only screen and (min-width: 576px) {}
+
+@media only screen and (max-width: 600px) {
+
+    .dropdownContainer {
+        width: 94%;
+    }
+}
+
+@media only screen and (min-width: 768px) {}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1200px) {}

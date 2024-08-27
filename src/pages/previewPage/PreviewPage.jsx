@@ -8,7 +8,7 @@ import Card from '../../components/card/Card';
 import CustomButton from '../../components/buttons/customButton/CustomButton';
 import Search from '../../components/search/Search';
 import FilterByGenre from '../../components/filterByGenre/FilterByGenre';
-// import Language from '../../components/selectLanguage/Language';
+import SelectLanguage from '../../components/selectLanguage/SelectLanguage'
 import NoMovies from '../../components/noMovies/NoMovies';
 import Spinner from '../../components/spinner/Spinner';
 
@@ -94,7 +94,7 @@ function PreviewPage() {
             <div className={styles.wrapper}>
                 <div className={styles.movieSelector}>
                     <Search />
-                    {/* <Language /> */}
+                    <SelectLanguage/>
                     <FilterByGenre handleGenreChange={handleGenreChange} onFilterHandle={onFilterHandle} uniqueGenres={getUniqueGenres()} />
                 </div>
                 {noMovies && <NoMovies />}

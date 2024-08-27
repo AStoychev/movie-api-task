@@ -16,6 +16,8 @@ Web application which take movies data from API and then processes it into the r
 
 4. Start the app with command: `npm run dev` .
 
-5. There are several test .txt files in the repo that you can use to test the application.
+5. If you want to try application, make .txt file and write movies - **each have to be on new line**.
 
-6. You can also try the app from [HERE](https://movie-api-task.onrender.com/)
+6. There are several test .txt files in the repo that you can use to test the application.
+
+7. You can also try the app from [HERE](https://movie-api-task.onrender.com/)

@@ -33,6 +33,9 @@
 .cardWrapper .flagWrapper .rating {
     position: absolute;
     display: inline-block;
+    width: 30px;
+    height: 15px;
+    margin: 0 auto;
     background-color: rgb(236,187,31);
     color: rgba(0, 0, 0, 0.639);
     font-size: 13px;
