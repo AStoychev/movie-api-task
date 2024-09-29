@@ -9,6 +9,7 @@
 }
 
 .uploadWrapper {
+    position: relative;
     width: 50%;
     min-height: 300px;
     background-color: rgb(23, 33, 41);
@@ -67,6 +68,8 @@
 .uploadWrapper .textWrapper {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 15px;
     font-family: Play, Arial, Helvetica, sans-serif;
 }
@@ -78,6 +81,39 @@
 .uploadWrapper .textWrapper p {
     font-size: 19px;
     color: #ffffff70;
+}
+
+.uploadWrapper .textWrapper .infoWrapper {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.uploadWrapper .textWrapper .infoIcon {
+    color: #ffffff70;
+    /* color: rgb(126, 147, 253); */
+    cursor: help;
+    transition: 0.3s;
+}
+
+.uploadWrapper .textWrapper .infoIcon:hover{
+    color: #ffffff3b;
+    /* color: rgba(126, 147, 253, 0.8); */
+}
+
+.uploadWrapper .textWrapper .copyIcon {
+    color: #ffffff70;
+    /* color: rgb(126, 147, 253); */
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.uploadWrapper .textWrapper .copyIcon:hover{
+    color: #ffffff3b;
+    /* color: rgba(126, 147, 253, 0.8); */
 }
 
 input[type="file"] {

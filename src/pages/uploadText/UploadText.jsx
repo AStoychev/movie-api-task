@@ -5,15 +5,24 @@ import { moviesFetched } from "../../store/slices/moviesSlice";
 
 import Checkbox from "../../components/checkbox/Checkbox";
 import CustomButton from "../../components/buttons/customButton/CustomButton";
+import { InfoTooltip } from "../../components/tooltipMainPage/InfoTooltip";
+import { CopyTooltip } from "../../components/tooltipMainPage/CopyTooltip";
 
 import fetchMovieData from "../../services/fetchMovieData";
+import { movieList } from "../../assets/dataMovies";
 
 import { FiUploadCloud } from "react-icons/fi";
+import { LuCopy } from "react-icons/lu";
+import { TiInfoLarge } from "react-icons/ti";
 import styles from "./UploadText.module.css";
+
+const COPY_TEXT = "Click to copy some movies";
+const AFTER_COPY_TEXT = "You copy some movies";
 
 function UploadText() {
     const [movies, setMovies] = useState([]);
     const [dragging, setDragging] = useState(false);
+    const [copyText, setCopyText] = useState(COPY_TEXT)
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
@@ -21,7 +30,8 @@ function UploadText() {
         const reader = new FileReader();
         reader.onload = (e) => {
             const text = e.target.result;
-            const movieTitles = text.split('\r\n').filter(title => title.trim());
+            const movieTitles = text.split(/\r\n|\n/).filter(title => title.trim());
+            // const movieTitles = text.split('\r\n').filter(title => title.trim());
             const uniqueTitles = [...new Set(movieTitles)];
             setMovies(uniqueTitles.map((title) => ({ title, selected: true })));
         };
@@ -78,6 +88,15 @@ function UploadText() {
         navigate('/preview');
     };
 
+    const onHandleCopy = () => {
+        const copyMovies = movieList.join('\n');
+        navigator.clipboard.writeText(copyMovies)
+        setCopyText(AFTER_COPY_TEXT);
+        setTimeout(() => {
+            setCopyText(COPY_TEXT)
+        }, 1500)
+    }
+
     return (
         <div className="container">
             <div className={styles.wrapper}>
@@ -104,6 +123,15 @@ function UploadText() {
                         <div className={styles.textWrapper}>
                             <h3>Drag & Drop</h3>
                             <p>or click over cloud and select .txt file from device</p>
+
+                            <div className={styles.infoWrapper}>
+                                <TiInfoLarge size={20} className={styles.infoIcon} data-tooltip-id="info-tooltip" />
+                                <LuCopy size={20} className={styles.copyIcon} onClick={onHandleCopy} data-tooltip-id="copy-tooltip" />
+                            </div>
+
+                            <InfoTooltip />
+                            <CopyTooltip text={copyText} />
+
                         </div>
                     </div>
                 </div>
